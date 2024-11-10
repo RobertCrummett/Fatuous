@@ -13,14 +13,14 @@ void swap(double complex* a, double complex* b) {
 	*b = temp;
 }
 
-void shuffle(double complex* data, size_t N, size_t stride) {
+void shuffle(double complex* data, size_t size, size_t stride) {
 	size_t target = 0;
-	for (size_t position = 0; position < N; position++) {
+	for (size_t position = 0; position < size; position++) {
 		if (target > position) {
 			swap(&data[position * stride], &data[target * stride]);
 		}
 
-		size_t mask = N >> 1;
+		size_t mask = size >> 1;
 
 		while (target & mask) {
 			target &= ~mask;
