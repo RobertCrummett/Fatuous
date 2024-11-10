@@ -3,5 +3,5 @@
 Quick start:
 
 ```console
-cc -o fft fft.c -lm
+cc -o main main.c -lm
 ```
