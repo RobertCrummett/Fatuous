@@ -4,7 +4,7 @@
 
 #include "fft.h"
 
-#define SIZE 9
+#define SIZE 7
 
 void print(double complex* data, size_t size) {
 	for (size_t i = 0; i < size; i++) {
@@ -22,8 +22,6 @@ int main() {
 		5 + 0 * I,
 		6 + 0 * I,
 		7 + 0 * I,
-		8 + 0 * I,
-		9 + 0 * I
 	};
 
 	print(data, SIZE);

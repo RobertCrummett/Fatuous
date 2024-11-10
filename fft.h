@@ -44,7 +44,7 @@ int fft_radixfft(complex double* data, size_t size, size_t stride) {
 	}
 
 	for (size_t i = 0; i < halfsize; i++) {
-		twiddles[i] = cexp(-I * M_PI * i / ((double)halfsize));
+		twiddles[i] = cexp(-I * M_PI * i / halfsize);
 	}
 
 	for (size_t step = 1; step < size; step <<= 1) {
@@ -82,7 +82,7 @@ int fft_radixifft(complex double* data, size_t size, size_t stride) {
 	}
 
 	for (size_t i = 0; i < halfsize; i++) {
-		twiddles[i] = cexp(I * M_PI * i / ((double)halfsize));
+		twiddles[i] = cexp(I * M_PI * i / halfsize);
 	}
 
 	for (size_t step = 1; step < size; step <<= 1) {
@@ -122,7 +122,7 @@ int fft_fft(complex double* data, size_t size, size_t stride) {
 	}
 
 	for (size_t i = 0; i < size; i++) {
-		chirp[i] = cexp(-I * M_PI * i * i / ((double)size));
+		chirp[i] = cexp(-I * M_PI * i * i / size);
 	}
 
 	complex double* a = calloc(larger_size, sizeof(complex double));
@@ -202,7 +202,7 @@ int fft_ifft(complex double* data, size_t size, size_t stride) {
 	}
 
 	for (size_t i = 0; i < size; i++) {
-		chirp[i] = cexp(I * M_PI * i * i / ((double)size));
+		chirp[i] = cexp(I * M_PI * i * i / size);
 	}
 
 	complex double* a = calloc(larger_size, sizeof(complex double));
